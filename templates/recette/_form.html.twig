@@ -1,0 +1,9 @@
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
+
+
+{% if recette.getUser().getEmail() is defined %}
+<div>proprietaire :: {{ recette.getUser().getEmail() }}</div>
+{% endif %}      
