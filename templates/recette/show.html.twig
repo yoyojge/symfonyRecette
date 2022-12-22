@@ -11,27 +11,27 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th><i class="fa-solid fa-hat-wizard"></i> Id </th>
                 <td>{{ recette.id }}</td>
             </tr>
             <tr>
-                <th>Titre</th>
+                <th><i class="fa-regular fa-clipboard"></i> Titre</th>
                 <td>{{ recette.titre }}</td>
             </tr>
             <tr>
-                <th>Ingredients</th>
+                <th><i class="fa-solid fa-egg"></i> Ingredients</th>
                 <td>{{ recette.ingredients }}</td>
             </tr>
             <tr>
-                <th>Etapes</th>
+                <th><i class="fa-solid fa-list"></i> Etapes</th>
                 <td>{{ recette.etapes }}</td>
             </tr>
             <tr>
-                <th>Description</th>
+                <th><i class="fa-regular fa-comment"></i> Description</th>
                 <td>{{ recette.description }}</td>
             </tr>
             <tr>
-                <th>proprietaire</th>
+                <th><i class="fa-solid fa-kitchen-set"></i> Le chef</th>
                 <td>{{ recette.getUser().getEmail() }}</td>
             </tr>
         </tbody>
