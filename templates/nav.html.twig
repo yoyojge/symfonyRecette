@@ -2,18 +2,15 @@
 
 
 
-
-
-
     <div class="d-flex align-items-center">
-        <div class="m-2"><img src="img/chocolate.jpg" style="width:60px;" /></div>
+        <div class="m-2"><img src="{{ app.request.baseUrl }}/img/chocolate.jpg" style="width:60px;" /></div>
 
         {# on retrouve les route des login/logout dans Controller/SecurityController #}
         <div>
             {% if app.user %}
-                {{app.user.email}} Connected <br /> <a href="{{ path('app_logout') }}" >logout</a>
+                {{app.user.email}} Connected <br /> <a href="{{ path('app_logout') }}" > - logout</a>
             {% else %}   
-                <a href="{{ path('app_login') }}">Login</a>
+                <a href="{{ path('app_login') }}"> - Login</a>
             {% endif %}
                 
         </div>
