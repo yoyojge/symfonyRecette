@@ -44,6 +44,10 @@ class Recette
         $this->notes = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return $this->titre;
+    }
 
     public function getId(): ?int
     {

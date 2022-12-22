@@ -100,19 +100,23 @@ class RecetteController extends AbstractController
         }    
 
         // on verifie si le user connecté a deja noté
-        $noted = $noteRepository->findBy( array('user_id' => $this->getUser() ) );
+        $noted = $noteRepository->findBy( array('user_id' => $this->getUser(), 'recette_id' => $recette ) );
         
         
         //on recupere toutes les notes, et on fait la moyenne
         $notes = $recette->getNotes();
         $SumNotes = 0;
+        $moyNotes = 0;
         $count = 0;
         foreach($notes as $note) {
             $SumNotes += $note->getValeurNote();
             $count++;
         }
        
-        $moyNotes = $SumNotes/$count;
+
+        if($count >0 ){
+            $moyNotes = $SumNotes/$count;
+        }
         // dd($moyNotes);
         
         
@@ -152,7 +156,7 @@ class RecetteController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_recette_delete', methods: ['POST'])]
+    #[Route('/delete/{id}', name: 'app_recette_delete', methods: ['POST'])]
     public function delete(Request $request, Recette $recette, RecetteRepository $recetteRepository): Response
     {
         

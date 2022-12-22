@@ -1,6 +1,7 @@
 
 ###> symfony/framework-bundle ###
 /.env
+/.envCopy
 /.env.local
 /.env.local.php
 /.env.*.local
